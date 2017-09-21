@@ -7,6 +7,19 @@ You will **NOT** need to modify `main.go`
 You will **NOT** need to modify the `Dockefile`
 
 ## What do I do?
+
+### Build the go binary
+
+You will need to build the go binary for use with the docker container. Go supports cross-compiling and you can set which OS to build for with the `GOOS` environment variable.
+
+Build the docker exercise go binary:
+
+`GOOS=linux go build`
+
+*If you're on a Linux machine you can just do `go build`.*
+
+If you get no feedback then the binary was built correctly.
+
 ### Build the docker excericse image
 
 `docker build -t <your-docker-hub-name>/docker-exercise-1 <dir>`
