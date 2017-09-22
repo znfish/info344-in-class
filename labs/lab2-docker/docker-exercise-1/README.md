@@ -4,7 +4,7 @@ This is a simple challenge that involves publishing ports when running a Docker 
 
 You will **NOT** need to modify `main.go`
 
-You will **NOT** need to modify the `Dockefile`
+You will **NOT** need to modify the `Dockerfile`
 
 ## What do I do?
 
@@ -32,7 +32,7 @@ when you build the container.
 
 `<your-docker-hub-name>` is your username on dockerhub.
 
-`<dir>` is the directory to build from. In most cases this is the current directory which you can specific with `.`
+`<dir>` is the directory to build from. In most cases this is the current directory which you can specify with `.`
 
 ### Run your newly built container
 
