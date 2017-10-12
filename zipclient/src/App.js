@@ -4,14 +4,14 @@ import $ from "jquery";
 
 var App = React.createClass({
     getInitialState: function () {
-        return { url: '', res: '' };
+        return { url: '', res: [] };
     },
 
-    getName: function () {
+    getCity: function () {
         console.log('clicked')
-        var name = $("#name").val();
-        console.log(name)
-        var url1 = "http://localhost:4000/hello?name=" + name;
+        var city = $("#city").val();
+        console.log(city)
+        var url1 = "http://localhost:4000/zips/" + city;
         this.getResponse(url1);
     },
 
@@ -27,14 +27,20 @@ var App = React.createClass({
     render: function () {
         return (
             <div className="App">
-                <h1>Test</h1>
+                <h1>City</h1>
                 <form>
-                    <input type="text" name="name" id="name" />
+                    <input type="text" id="city" />
                 </form>
-                <button id="button" onClick={this.getName}>Submit</button>
+                <button id="button" onClick={this.getCity}>Submit</button>
                 {
                     this.state.res !== '' &&
-                    <h4>{this.state.res}</h4>
+                    this.state.res.map(function (d, i) {
+                        return (
+                            <div key={i}>
+                                <h4>{d.Code} {d.City} {d.State}</h4>
+                            </div>
+                        );
+                    })
                 }
             </div>
         );
